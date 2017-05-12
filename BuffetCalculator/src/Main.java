@@ -6,7 +6,7 @@ public class Main {
 		int cost = z.nextInt();
 		double count[] = Storage();
 		double moneylost = Calculation(count, cost);
-		System.out.println("You saved $" + moneylost);
+		System.out.println("You lost $" + moneylost);
 	}
 	public static double[] Storage(){
 		Scanner s = new Scanner(System.in);

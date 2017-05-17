@@ -1,26 +1,37 @@
+package buffet;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-public class GUI{
-	
+import javax.swing.JSpinner;
+
+public class GUI extends JFrame{
+	JPanel p = new JPanel();
+	JFrame f = new JFrame();
+	JButton b = new JButton("Calculate");
+	JTextField t = new JTextField();
+	JLabel l = new JLabel("Pieces of Bacon: ");
+	JSpinner s = new JSpinner();
 public static void main(String[] args){
 	new GUI();
 }
 public GUI(){
-	   JFrame guiFrame = new JFrame();
-       
-       //make sure the program exits when the frame closes
-       guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-       guiFrame.setTitle("Example GUI");
-       guiFrame.setSize(300,250);
-     
-       //This will center the JFrame in the middle of the screen
-       guiFrame.setLocationRelativeTo(null);
+	  super("Basic Swing App");
+	
+	  setSize(400, 400);
+	  setResizable(true);
+	  p.add(l);
+	 p.add(s);
+	 
+	  add(p);
+	  
+	  setVisible(true);
 }
 }

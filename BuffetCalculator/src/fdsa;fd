@@ -1,4 +1,5 @@
 package buffet;
+package calculate;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
@@ -8,9 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSpinner;
+import javax.swing.*;
 
 public class GUI extends JFrame{
 	JPanel p = new JPanel();
@@ -27,9 +31,17 @@ public GUI(){
 	
 	  setSize(400, 400);
 	  setResizable(true);
+	  p.setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.BLUE));
+
+	  p.setBackground(Color.WHITE);
+
+	  JScrollPane scrollPane = new JScrollPane(p);
 	  p.add(l);
 	 p.add(s);
-	 
+	 p.add(b);
+	 setPreferredSize(new Dimension(450, 110));
+	 add(scrollPane, BorderLayout.CENTER);
+
 	  add(p);
 	  
 	  setVisible(true);

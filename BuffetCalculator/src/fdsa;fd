@@ -1,6 +1,5 @@
 package buffet;
-package calculate;
-import javax.swing.JFrame;
+package calculate;import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -11,18 +10,24 @@ import javax.swing.JList;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSpinner;
 import javax.swing.*;
 
 public class GUI extends JFrame{
-	JPanel p = new JPanel();
+	JPanel p = new JPanel(new GridBagLayout());
 	JFrame f = new JFrame();
 	JButton b = new JButton("Calculate");
 	JTextField t = new JTextField();
 	JLabel l = new JLabel("Pieces of Bacon: ");
+	JLabel egg = new JLabel("Eggs: ");
 	JSpinner s = new JSpinner();
+	JSpinner a1 = new JSpinner();
+	JSpinner a2 = new JSpinner();
+	JSpinner a3= new JSpinner();
 public static void main(String[] args){
 	new GUI();
 }
@@ -31,14 +36,17 @@ public GUI(){
 	
 	  setSize(400, 400);
 	  setResizable(true);
-	  p.setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.BLUE));
+	  p.setBorder(BorderFactory.createMatteBorder(25, 25, 25, 25, Color.BLUE));
 
 	  p.setBackground(Color.WHITE);
 
 	  JScrollPane scrollPane = new JScrollPane(p);
 	  p.add(l);
 	 p.add(s);
+	 p.add(egg);
+	 p.add(a1);
 	 p.add(b);
+
 	 setPreferredSize(new Dimension(450, 110));
 	 add(scrollPane, BorderLayout.CENTER);
 

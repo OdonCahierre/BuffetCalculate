@@ -1,5 +1,6 @@
 package buffet;
-package calculate;import javax.swing.JFrame;
+package calculate;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -10,6 +11,7 @@ import javax.swing.JList;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -19,10 +21,11 @@ import javax.swing.*;
 
 public class GUI extends JFrame{
 	JPanel p = new JPanel(new GridBagLayout());
+	GridBagConstraints c = new GridBagConstraints();
 	JFrame f = new JFrame();
 	JButton b = new JButton("Calculate");
 	JTextField t = new JTextField();
-	JLabel l = new JLabel("Pieces of Bacon: ");
+	JLabel l = new JLabel("Pieces of Bacon:");
 	JLabel egg = new JLabel("Eggs: ");
 	JSpinner s = new JSpinner();
 	JSpinner a1 = new JSpinner();
@@ -36,17 +39,65 @@ public GUI(){
 	
 	  setSize(400, 400);
 	  setResizable(true);
-	  p.setBorder(BorderFactory.createMatteBorder(25, 25, 25, 25, Color.BLUE));
+	  p.setBorder(BorderFactory.createMatteBorder(5, 5, 5, 5, Color.BLUE));
 
 	  p.setBackground(Color.WHITE);
 
 	  JScrollPane scrollPane = new JScrollPane(p);
-	  p.add(l);
-	 p.add(s);
-	 p.add(egg);
-	 p.add(a1);
-	 p.add(b);
+	 
+	  c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 0;
+	    p.add(l, c);
+	    c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 0;
+	 p.add(s, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 1;
+	 p.add(egg, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 1;
+	 p.add(a1, c);
+	  c.fill = GridBagConstraints.HORIZONTAL;
+	    c.ipady = 40;      //make this component tall
+	    c.weightx = 0.0;
+	    c.gridwidth = 3;
+	    c.gridx = 0;
+	    c.gridy = 2;
+	    p.add(b, c);
+	    
+	    
+	    b.doClick();
+	    
+	
+	    
+	    b.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    	    int bacon = (Integer)s.getValue();
+	    	    int egg = (Integer)a1.getValue();
+	    	    int a = 0;
+	    		a = bacon + egg;
+	    		JLabel print = new JLabel("You ate " + a + " pieces of food!");
+	    		 c.fill = GridBagConstraints.HORIZONTAL;
+	    			c.weightx = 0.5;
+	    			c.gridx = 1;
+	    			c.gridy = 4;
+	    		p.add(print, c);
+	    	}
 
+		
+
+		
+	    });
+	 
+	   
 	 setPreferredSize(new Dimension(450, 110));
 	 add(scrollPane, BorderLayout.CENTER);
 

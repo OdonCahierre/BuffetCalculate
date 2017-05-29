@@ -1,5 +1,5 @@
 package buffet;
-package calculate;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JComboBox;
@@ -26,11 +26,33 @@ public class GUI extends JFrame{
 	JButton b = new JButton("Calculate");
 	JTextField t = new JTextField();
 	JLabel l = new JLabel("Pieces of Bacon:");
-	JLabel egg = new JLabel("Eggs: ");
 	JSpinner s = new JSpinner();
+	JLabel egg = new JLabel("Eggs: ");
 	JSpinner a1 = new JSpinner();
+	JLabel b2 = new JLabel("3oz of Potatoes: ");
 	JSpinner a2 = new JSpinner();
+	JLabel b3 = new JLabel("Sausages: ");
 	JSpinner a3= new JSpinner();
+	JLabel b4 = new JLabel("Toast: ");
+	JSpinner a4= new JSpinner();
+	JLabel b5 = new JLabel("Pancakes/Waffles: ");
+	JSpinner a5= new JSpinner();
+	JLabel b6 = new JLabel("Cinnamon Rolls: ");
+	JSpinner a6= new JSpinner();
+	JLabel b7 = new JLabel("Coffee: ");
+	JSpinner a7= new JSpinner();
+	JLabel b8 = new JLabel("Pizza: ");
+	JSpinner a8= new JSpinner();
+	JLabel b9 = new JLabel("Cerealw/Milk: ");
+	JSpinner a9= new JSpinner();
+	public static double Calculation(double[] x, int y){
+		double[] costPiece = {0.17, 0.15, 0.12, 0.2, 0.035, 0.05, 0.3, 0.03, 0.32, 0.25};
+		double total = 0;
+		for(int i = 0; i < 10; i++){
+		total += costPiece[i]*x[i];	
+		}
+		return y-total;
+	}
 public static void main(String[] args){
 	new GUI();
 }
@@ -44,6 +66,7 @@ public GUI(){
 	  p.setBackground(Color.WHITE);
 
 	  JScrollPane scrollPane = new JScrollPane(p);
+	  
 	 
 	  c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
@@ -65,32 +88,122 @@ public GUI(){
 		c.gridx = 1;
 		c.gridy = 1;
 	 p.add(a1, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 2;
+	 p.add(b2, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 2;
+	 p.add(a2, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 3;
+	 p.add(b3, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 3;
+	 p.add(a3, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 4;
+	 p.add(b4, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 4;
+	 p.add(a4, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 5;
+	 p.add(b5, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 5;
+	 p.add(a5, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 6;
+	 p.add(b6, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 6;
+	 p.add(a6, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 7;
+	 p.add(b7, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 7;
+	 p.add(a7, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 8;
+	 p.add(b8, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 8;
+	 p.add(a8, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 9;
+	 p.add(b9, c);
+	 c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 9;
+	 p.add(a9, c);
 	  c.fill = GridBagConstraints.HORIZONTAL;
 	    c.ipady = 40;      //make this component tall
 	    c.weightx = 0.0;
 	    c.gridwidth = 3;
 	    c.gridx = 0;
-	    c.gridy = 2;
+	    c.gridy = 10;
 	    p.add(b, c);
-	    
-	    
-	    b.doClick();
-	    
-	
 	    
 	    b.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    	    int bacon = (Integer)s.getValue();
-	    	    int egg = (Integer)a1.getValue();
-	    	    int a = 0;
-	    		a = bacon + egg;
-	    		JLabel print = new JLabel("You ate " + a + " pieces of food!");
+	    	    double bacon = (Integer)s.getValue();
+	    	    double eggs = (Integer)a1.getValue();
+	    	    double potatoes = (Integer)a2.getValue();
+	    	    double sausage = (Integer)a3.getValue();
+	    	    double toast = (Integer)a4.getValue();
+	    	    double PancakesWaffles = (Integer)a5.getValue();
+	    	    double CinnamonRoll = (Integer)a6.getValue();
+	    	    double Coffee = (Integer)a7.getValue();
+	    	    double Pizza = (Integer)a8.getValue();
+	    	    double Cerealwmilk = (Integer)a9.getValue();
+	    	    
+	    	    double[] dasf = {bacon, eggs, potatoes, sausage, toast, PancakesWaffles, CinnamonRoll, Coffee, Pizza, Cerealwmilk};
+	    	    double a = 0;
+	    		a = Calculation(dasf , 9);
+	    		JLabel print = new JLabel("You lost " + a + "dollars!");
 	    		 c.fill = GridBagConstraints.HORIZONTAL;
 	    			c.weightx = 0.5;
 	    			c.gridx = 1;
-	    			c.gridy = 4;
-	    		p.add(print, c);
+	    			c.gridy = 11;
+	   	    		p.add(print, c);
 	    	}
+
+
+	    
+	
+	    
 
 		
 

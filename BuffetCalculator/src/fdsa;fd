@@ -45,7 +45,9 @@ public class GUI extends JFrame{
 	JSpinner a8= new JSpinner();
 	JLabel b9 = new JLabel("Cerealw/Milk: ");
 	JSpinner a9= new JSpinner();
-	public static double Calculation(double[] x, int y){
+	JLabel price = new JLabel("Price of Buffet: ");
+	JSpinner z = new JSpinner();
+	public static double Calculation(double[] x, double y){
 		double[] costPiece = {0.17, 0.15, 0.12, 0.2, 0.035, 0.05, 0.3, 0.03, 0.32, 0.25};
 		double total = 0;
 		for(int i = 0; i < 10; i++){
@@ -67,117 +69,127 @@ public GUI(){
 
 	  JScrollPane scrollPane = new JScrollPane(p);
 	  
-	 
 	  c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
 		c.gridy = 0;
-	    p.add(l, c);
+	    p.add(price, c);
 	    c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
 		c.gridy = 0;
+	 p.add(z, c);
+	  c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 0;
+		c.gridy = 1;
+	    p.add(l, c);
+	    c.fill = GridBagConstraints.HORIZONTAL;
+		c.weightx = 0.5;
+		c.gridx = 1;
+		c.gridy = 1;
 	 p.add(s, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 1;
+		c.gridy = 2;
 	 p.add(egg, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 1;
+		c.gridy = 2;
 	 p.add(a1, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 2;
+		c.gridy = 3;
 	 p.add(b2, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 2;
+		c.gridy = 3;
 	 p.add(a2, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 3;
+		c.gridy = 4;
 	 p.add(b3, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 3;
+		c.gridy = 4;
 	 p.add(a3, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 4;
+		c.gridy = 5;
 	 p.add(b4, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 4;
+		c.gridy = 5;
 	 p.add(a4, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 5;
+		c.gridy = 6;
 	 p.add(b5, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 5;
+		c.gridy = 6;
 	 p.add(a5, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 6;
+		c.gridy = 7;
 	 p.add(b6, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 6;
+		c.gridy = 7;
 	 p.add(a6, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 7;
+		c.gridy = 8;
 	 p.add(b7, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 7;
+		c.gridy = 8;
 	 p.add(a7, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 8;
+		c.gridy = 9;
 	 p.add(b8, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 8;
+		c.gridy = 9;
 	 p.add(a8, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 0;
-		c.gridy = 9;
+		c.gridy = 10;
 	 p.add(b9, c);
 	 c.fill = GridBagConstraints.HORIZONTAL;
 		c.weightx = 0.5;
 		c.gridx = 1;
-		c.gridy = 9;
+		c.gridy = 10;
 	 p.add(a9, c);
 	  c.fill = GridBagConstraints.HORIZONTAL;
 	    c.ipady = 40;      //make this component tall
 	    c.weightx = 0.0;
 	    c.gridwidth = 3;
 	    c.gridx = 0;
-	    c.gridy = 10;
+	    c.gridy = 11;
 	    p.add(b, c);
 	    
 	    b.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
+	    		double price = (Integer)z.getValue();
 	    	    double bacon = (Integer)s.getValue();
 	    	    double eggs = (Integer)a1.getValue();
 	    	    double potatoes = (Integer)a2.getValue();
@@ -188,34 +200,30 @@ public GUI(){
 	    	    double Coffee = (Integer)a7.getValue();
 	    	    double Pizza = (Integer)a8.getValue();
 	    	    double Cerealwmilk = (Integer)a9.getValue();
-	    	    
-	    	    double[] dasf = {bacon, eggs, potatoes, sausage, toast, PancakesWaffles, CinnamonRoll, Coffee, Pizza, Cerealwmilk};
+	    	  	double[] dasf = {bacon, eggs, potatoes, sausage, toast, PancakesWaffles, CinnamonRoll, Coffee, Pizza, Cerealwmilk};
 	    	    double a = 0;
-	    		a = Calculation(dasf , 9);
-	    		JLabel print = new JLabel("You lost " + a + "dollars!");
+	    		a = Calculation(dasf , price);
+	    		if(a < 0){
+	    			JLabel print = new JLabel("You saved " + Math.abs(a) + " Dollars!");
+	    			 c.fill = GridBagConstraints.HORIZONTAL;
+		    			c.weightx = 0.5;
+		    			c.gridx = 1;
+		    			c.gridy = 12;
+		   	    		p.add(print, c);
+	    		} else{
+	    		JLabel print = new JLabel("You lost " + a + " Dollars!");
+	    		
 	    		 c.fill = GridBagConstraints.HORIZONTAL;
 	    			c.weightx = 0.5;
 	    			c.gridx = 1;
-	    			c.gridy = 11;
+	    			c.gridy = 12;
 	   	    		p.add(print, c);
+	    		}
 	    	}
-
-
-	    
-	
-	    
-
-		
-
-		
 	    });
-	 
-	   
 	 setPreferredSize(new Dimension(450, 110));
 	 add(scrollPane, BorderLayout.CENTER);
-
-	  add(p);
-	  
+	  add(p);	  
 	  setVisible(true);
 }
 }

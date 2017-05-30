@@ -215,7 +215,7 @@ public GUI(){
 	    			 c.fill = GridBagConstraints.HORIZONTAL;
 		    			c.weightx = 0.5;
 		    			c.gridx = 1;
-		    			c.gridy = 13;
+		    			c.gridy = 12;
 		   	    		p.add(print, c);
 		   	    		
 		   	    		setVisible(true);
@@ -226,7 +226,7 @@ public GUI(){
 	    		 c.fill = GridBagConstraints.HORIZONTAL;
 	    			c.weightx = 0.5;
 	    			c.gridx = 1;
-	    			c.gridy = 13;
+	    			c.gridy = 12;
 	   	    		p.add(print, c);
 	   	    		
 	   	    	setVisible(true);

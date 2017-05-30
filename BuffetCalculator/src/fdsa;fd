@@ -1,4 +1,5 @@
 package buffet;
+package test;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -46,7 +47,8 @@ public class GUI extends JFrame{
 	JLabel b9 = new JLabel("Cerealw/Milk: ");
 	JSpinner a9= new JSpinner();
 	JLabel price = new JLabel("Price of Buffet: ");
-	JSpinner z = new JSpinner();
+	JTextField z = new JTextField();
+	JLabel print = new JLabel();
 	public static double Calculation(double[] x, double y){
 		double[] costPiece = {0.17, 0.15, 0.12, 0.2, 0.035, 0.05, 0.3, 0.03, 0.32, 0.25};
 		double total = 0;
@@ -189,7 +191,7 @@ public GUI(){
 	    
 	    b.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		double price = (Integer)z.getValue();
+	    		double price = Double.parseDouble(z.getText());
 	    	    double bacon = (Integer)s.getValue();
 	    	    double eggs = (Integer)a1.getValue();
 	    	    double potatoes = (Integer)a2.getValue();
@@ -203,25 +205,33 @@ public GUI(){
 	    	  	double[] dasf = {bacon, eggs, potatoes, sausage, toast, PancakesWaffles, CinnamonRoll, Coffee, Pizza, Cerealwmilk};
 	    	    double a = 0;
 	    		a = Calculation(dasf , price);
+	    		
 	    		if(a < 0){
-	    			JLabel print = new JLabel("You saved " + Math.abs(a) + " Dollars!");
+	    			
+	    			
+	    			print.setText("You saved " + Math.abs(a) + " Dollars!");
 	    			 c.fill = GridBagConstraints.HORIZONTAL;
 		    			c.weightx = 0.5;
 		    			c.gridx = 1;
 		    			c.gridy = 12;
 		   	    		p.add(print, c);
+		   	    		
+		   	    		setVisible(true);
+		   	    	
 	    		} else{
-	    		JLabel print = new JLabel("You lost " + a + " Dollars!");
-	    		
+	    	
+	    		print.setText("You lost " + a + " Dollars!");
 	    		 c.fill = GridBagConstraints.HORIZONTAL;
 	    			c.weightx = 0.5;
 	    			c.gridx = 1;
 	    			c.gridy = 12;
 	   	    		p.add(print, c);
+	   	    		
+	   	    	setVisible(true);
 	    		}
 	    	}
 	    });
-	 setPreferredSize(new Dimension(450, 110));
+	 setPreferredSize(new Dimension(450, 450));
 	 add(scrollPane, BorderLayout.CENTER);
 	  add(p);	  
 	  setVisible(true);
